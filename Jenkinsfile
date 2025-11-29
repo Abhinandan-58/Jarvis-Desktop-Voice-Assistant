@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 sh '''
-                ssh -o StrictHostKeyChecking=no -i $KEY ubuntu@54.187.86.180 << EOF
+                ssh -o StrictHostKeyChecking=no -i jarvis-key ubuntu@54.187.86.180 << EOF
                   cd /home/ubuntu/Jarvis-Desktop-Voice-Assistant
                   sudo git pull
                   sudo pip3 install -r requirements.txt
