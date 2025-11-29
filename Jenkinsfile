@@ -10,6 +10,7 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
+                sshagent(['jarvis-key'])
                 sh '''
                 ssh -o StrictHostKeyChecking=no ubuntu@34.213.232.253 "
                   cd /home/ubuntu/Jarvis-Desktop-Voice-Assistant &&
